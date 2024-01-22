@@ -4,12 +4,14 @@ import {
   EmptySelectButtonIndicator,
   SelectButtonIndicator,
 } from './styles'
+import { useRouter } from 'next/router'
 
 interface ISidebarButtonProps {
   icon: ElementType
   text: string
   isSelected?: boolean
   buttonId: number
+  route: string
   selectButtonId: Dispatch<SetStateAction<number>>
 }
 
@@ -19,10 +21,15 @@ export function SidebarButton({
   isSelected = true,
   buttonId,
   selectButtonId,
+  route,
 }: ISidebarButtonProps) {
+  const router = useRouter()
   function setButtonId() {
+    router.push(route)
     selectButtonId(buttonId)
   }
+
+  console.log('isSelected', isSelected)
 
   return (
     <Container onClick={setButtonId}>

@@ -15,13 +15,12 @@ interface ListBooksProps {
 export function MainList() {
   const [allBooks, setAllBooks] = useState<ListBooksProps[]>()
   // TODO: use feachParams
-  async function getUsers() {
-    const books = await api.get('/books/list-all-books')
-    console.log(books)
-    setAllBooks(books.data)
-  }
+
   useEffect(() => {
-    getUsers()
+    api.get('/books/list-all-books').then((books) => {
+      console.log(books)
+      setAllBooks(books.data)
+    })
   }, [])
 
   return (

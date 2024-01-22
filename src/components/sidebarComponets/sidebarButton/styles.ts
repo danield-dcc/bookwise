@@ -9,6 +9,7 @@ export const Container = styled('button', {
   border: 'none',
   background: 'transparent',
   position: 'relative',
+  cursor: 'pointer',
 
   '&:focus, &:hover': {
     p: {

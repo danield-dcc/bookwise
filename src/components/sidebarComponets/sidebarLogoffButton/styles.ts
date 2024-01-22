@@ -33,14 +33,22 @@ export const Container = styled('button', {
     fontWeight: '$bold',
     lineHeight: '$base',
     color: '$gray300',
-    marginLeft: '$6',
+    marginLeft: '$8',
+    marginTop: '$2',
   },
+
+  '&:hover': {
+    p: {
+      color: '$gray100',
+    },
+  },
+
   svg: {
     position: 'absolute',
 
     height: 20,
     width: 20,
     marginTop: '$3',
-    marginLeft: '250px',
+    marginLeft: '230px',
   },
 })

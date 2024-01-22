@@ -10,6 +10,14 @@ export function SidebarLogoffButton() {
     signOut()
   }
 
+  function sorterName(userName: string | undefined | null) {
+    if (userName) {
+      const sortName = userName.split(' ')
+      return sortName[0]
+    }
+    return userName
+  }
+
   return (
     <Container onClick={sigOffUser}>
       <Image
@@ -20,7 +28,7 @@ export function SidebarLogoffButton() {
       />
 
       <div>
-        <p>{session?.user?.name}</p>
+        <p>{sorterName(session?.user?.name)}</p>
       </div>
       <SignOutSVG color="#F75A68" width={20} height={20} />
     </Container>
