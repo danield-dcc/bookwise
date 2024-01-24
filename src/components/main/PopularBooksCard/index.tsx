@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { CardContent, Container, Review, SubTitle, Title } from './styles'
 import { Star } from 'phosphor-react'
+import { removeStringPublic } from '@/utils/ChangeImagePath'
 
 interface PopularBooksCardProps {
   name: string
@@ -15,10 +16,6 @@ export function PopularBooksCard({
   name,
   rating,
 }: PopularBooksCardProps) {
-  function removeStringPublic(imageUrl: string) {
-    return imageUrl.replaceAll('public/', '/')
-  }
-
   function ratingStars(rate: number) {
     const filledStar = Array.from({ length: rate }).map((_, i) => (
       <Star key={i} weight="fill" color="#8381D9" />

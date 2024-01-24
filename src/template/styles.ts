@@ -7,4 +7,13 @@ export const MainContainer = styled('main', {
   alignItems: 'stretch',
   padding: '$5',
   gap: '6rem',
+
+  variants: {
+    columns: {
+      three: {},
+      two: {
+        gridTemplateColumns: '235px 1fr ',
+      },
+    },
+  },
 })

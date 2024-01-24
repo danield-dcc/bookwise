@@ -1,3 +1,4 @@
+import { removeStringPublic } from '@/utils/ChangeImagePath'
 import {
   BodyContent,
   CardBody,
@@ -26,10 +27,6 @@ export function MainListCard({
   summary,
   title,
 }: MainListCardProps) {
-  function removeStringPublic(imageUrl: string) {
-    return imageUrl.replaceAll('public/', '/')
-  }
-
   return (
     <Container>
       <CardHeader>
